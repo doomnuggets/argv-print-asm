@@ -1,4 +1,4 @@
 *.o
-argvtest
+argv-print
 peda*
 .gdb_history
