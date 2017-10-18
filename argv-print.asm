@@ -11,11 +11,11 @@ section .text
 
     _start:
         pop eax         ; Load argc
-        cmp eax, 0x01   ; At least 2 arguments are required to run.
+        cmp eax, 0x01   ; At least 1 commandline argument is required.
         pop ebx         ; Load argv ptr into ebx
         je usage        ; Show the usage if the argument count is 1 (no arguments were passed).
         push ebx        ; Move the ptr back to the stack.
-        mov esi, esp    ; Save the stack pointer
+        mov esi, esp    ; Save the stack pointer (which holds the commandline arguments)
         jmp loop_head
 
     loop_head:
